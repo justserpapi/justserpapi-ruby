@@ -1,0 +1,37 @@
+{
+  "service": {
+    "name": "justserpapi",
+    "display_name": "JustSerpAPI",
+    "description": "OpenAPI-first Ruby SDK for JustSerpAPI.",
+    "default_server_url": "https://api.justserpapi.com"
+  },
+  "spec": {
+    "source_url": "https://api.justserpapi.com/v3/api-docs/gateway",
+    "raw_path": "openapi/raw/justserpapi.openapi.json",
+    "normalized_path": "openapi/normalized/justserpapi.openapi.json",
+    "baseline_path": "openapi/baseline/justserpapi.openapi.json"
+  },
+  "generator": {
+    "version": "7.20.0",
+    "cache_dir": ".cache/openapi-generator",
+    "config_template": "config/generators/ruby.json"
+  },
+  "package": {
+    "name": "justserpapi",
+    "module_name": "JustSerpApi",
+    "version_file": "lib/justserpapi/version.rb",
+    "registry": "rubygems",
+    "repo_name": "justserpapi-ruby",
+    "repo_remote": "https://github.com/justserpapi/justserpapi-ruby",
+    "summary": "OpenAPI-first Ruby SDK for JustSerpAPI",
+    "description": "Generated Ruby client and stable high-level wrapper for the JustSerpAPI HTTP API.",
+    "license": "MIT",
+    "required_ruby_version": ">= 3.1"
+  },
+  "generate": {
+    "workspace": ".generated",
+    "output_subdir": "ruby",
+    "runtime_dir": "generated/ruby-client/lib"
+  }
+}
+

@@ -1,0 +1,15 @@
+{
+  "gemName": "{{PACKAGE_NAME}}",
+  "moduleName": "{{MODULE_NAME}}",
+  "gemVersion": "{{PACKAGE_VERSION}}",
+  "gemSummary": "{{PACKAGE_SUMMARY}}",
+  "gemDescription": "{{PACKAGE_DESCRIPTION}}",
+  "gemHomepage": "{{REPO_REMOTE}}",
+  "gemLicense": "{{PACKAGE_LICENSE}}",
+  "gemRequiredRubyVersion": "{{PACKAGE_REQUIRED_RUBY_VERSION}}",
+  "library": "faraday",
+  "hideGenerationTimestamp": true,
+  "sortParamsByRequiredFlag": true,
+  "sortModelPropertiesByRequiredFlag": true
+}
+

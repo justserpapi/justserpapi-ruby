@@ -1,0 +1,42 @@
+name: validate-ruby-sdk
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Run control-plane unit tests
+        run: python3 -m unittest discover -s scripts/tests -v
+
+      - name: Verify checked-in generation
+        run: python3 scripts/sdkctl.py sync --skip-fetch --check
+
+      - name: Run breaking-change check
+        run: python3 scripts/sdkctl.py breaking-check
+
+      - name: Run Ruby tests
+        run: bundle exec rake test
+
+      - name: Build gem
+        run: gem build justserpapi.gemspec
+

@@ -1,0 +1,11 @@
+.bundle/
+.cache/
+.generated/
+*.gem
+pkg/
+tmp/
+vendor/bundle/
+__pycache__/
+scripts/__pycache__/
+scripts/tests/__pycache__/
+
