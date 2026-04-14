@@ -36,5 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "faraday-multipart", "~> 1.0"
   spec.add_runtime_dependency "marcel", "~> 1.0"
 
+  spec.add_development_dependency "minitest", "~> 5.22"
   spec.add_development_dependency "rake", "~> 13.0"
 end
