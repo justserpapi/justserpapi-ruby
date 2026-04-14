@@ -65,8 +65,10 @@ client = JustSerpApi::Client.new(
 Fetch the live OpenAPI document, normalize it, regenerate the SDK, and sync the committed generated runtime:
 
 ```bash
-JUSTSERPAPI_OPENAPI_API_KEY=... python3 scripts/sdkctl.py sync
+JUSTSERPAPI_OPENAPI_USERNAME=... JUSTSERPAPI_OPENAPI_PASSWORD=... python3 scripts/sdkctl.py sync
 ```
+
+The default source URL is `https://api.justserpapi.com/v3/api-docs/gateway`. Override it with `JUSTSERPAPI_OPENAPI_URL` if needed.
 
 Rebuild from the checked-in raw spec without hitting the network:
 
@@ -109,4 +111,3 @@ The upstream spec currently lacks rich per-endpoint response schemas, so the nor
 5. GitHub Actions publishes the gem to RubyGems.org and creates a GitHub Release.
 
 RubyGems Trusted Publishing setup is documented in `docs/publishing.md`.
-

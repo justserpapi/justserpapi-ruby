@@ -28,18 +28,11 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Validate sync secret
-        env:
-          JUSTSERPAPI_OPENAPI_API_KEY: ${{ secrets.JUSTSERPAPI_OPENAPI_API_KEY }}
-        run: |
-          if [ -z "${JUSTSERPAPI_OPENAPI_API_KEY}" ]; then
-            echo "Missing JUSTSERPAPI_OPENAPI_API_KEY secret" >&2
-            exit 1
-          fi
-
       - name: Refresh OpenAPI and generated runtime
         env:
-          JUSTSERPAPI_OPENAPI_API_KEY: ${{ secrets.JUSTSERPAPI_OPENAPI_API_KEY }}
+          JUSTSERPAPI_OPENAPI_USERNAME: ${{ secrets.JUSTSERPAPI_OPENAPI_USERNAME }}
+          JUSTSERPAPI_OPENAPI_PASSWORD: ${{ secrets.JUSTSERPAPI_OPENAPI_PASSWORD }}
+          JUSTSERPAPI_OPENAPI_URL: ${{ secrets.JUSTSERPAPI_OPENAPI_URL }}
         run: python3 scripts/sdkctl.py sync
 
       - name: Run control-plane unit tests
@@ -66,4 +59,3 @@ jobs:
           labels: |
             automation
             openapi
-

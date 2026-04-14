@@ -1,5 +1,7 @@
 import copy
+import os
 import unittest
+from unittest import mock
 
 from scripts import sdkctl
 
@@ -114,6 +116,26 @@ class BreakingChangeDetectionTest(unittest.TestCase):
         )
 
 
+class FetchAuthResolutionTest(unittest.TestCase):
+    def test_resolve_fetch_headers_supports_basic_auth(self):
+        with mock.patch.dict(
+            os.environ,
+            {
+                "JUSTSERPAPI_OPENAPI_USERNAME": "demo-user",
+                "JUSTSERPAPI_OPENAPI_PASSWORD": "demo-pass",
+            },
+            clear=False,
+        ):
+            headers = sdkctl.resolve_fetch_headers()
+
+        self.assertEqual("Basic ZGVtby11c2VyOmRlbW8tcGFzcw==", headers["Authorization"])
+
+    def test_resolve_fetch_headers_omits_authorization_without_credentials(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            headers = sdkctl.resolve_fetch_headers()
+
+        self.assertNotIn("Authorization", headers)
+
+
 if __name__ == "__main__":
     unittest.main()
-

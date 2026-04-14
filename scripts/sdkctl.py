@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import copy
 import filecmp
 import json
@@ -17,7 +18,6 @@ import tempfile
 from dataclasses import dataclass
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 
@@ -102,27 +102,29 @@ def load_package_version(version_path: pathlib.Path) -> str:
 
 
 def resolve_source_url(manifest: Dict[str, Any], explicit_url: Optional[str]) -> str:
-    source_url = explicit_url or os.getenv("JUSTSERPAPI_OPENAPI_URL") or manifest["spec"]["source_url"]
-    parsed = urlparse(source_url)
-    query = parse_qsl(parsed.query, keep_blank_values=True)
-    has_api_key = any(key == "api_key" for key, _ in query)
-    env_api_key = os.getenv("JUSTSERPAPI_OPENAPI_API_KEY")
-    if env_api_key and not has_api_key:
-        query.append(("api_key", env_api_key))
-    return urlunparse(parsed._replace(query=urlencode(query)))
+    return explicit_url or os.getenv("JUSTSERPAPI_OPENAPI_URL") or manifest["spec"]["source_url"]
+
+
+def resolve_fetch_headers() -> Dict[str, str]:
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": "justserpapi-ruby-sdkctl/0.1",
+    }
+
+    username = os.getenv("JUSTSERPAPI_OPENAPI_USERNAME")
+    password = os.getenv("JUSTSERPAPI_OPENAPI_PASSWORD")
+    if username is not None and password is not None:
+        encoded = base64.b64encode(("%s:%s" % (username, password)).encode("utf-8")).decode("ascii")
+        headers["Authorization"] = "Basic %s" % encoded
+
+    return headers
 
 
 def fetch_spec_command(args: argparse.Namespace, manifest: Dict[str, Any]) -> None:
     source_url = resolve_source_url(manifest, args.source_url)
     output_path = resolve_path(args.output or manifest["spec"]["raw_path"])
 
-    request = Request(
-        source_url,
-        headers={
-            "Accept": "application/json",
-            "User-Agent": "justserpapi-ruby-sdkctl/0.1"
-        },
-    )
+    request = Request(source_url, headers=resolve_fetch_headers())
 
     log("Fetching spec from %s" % source_url)
     try:
@@ -131,7 +133,8 @@ def fetch_spec_command(args: argparse.Namespace, manifest: Dict[str, Any]) -> No
     except HTTPError as exc:
         if exc.code == 401:
             raise CLIError(
-                "Spec fetch returned HTTP 401. Set JUSTSERPAPI_OPENAPI_API_KEY or JUSTSERPAPI_OPENAPI_URL."
+                "Spec fetch returned HTTP 401. Set JUSTSERPAPI_OPENAPI_USERNAME and "
+                "JUSTSERPAPI_OPENAPI_PASSWORD, or JUSTSERPAPI_OPENAPI_URL if the docs URL changed."
             ) from exc
         raise CLIError("Unable to fetch spec from %s: HTTP %s" % (source_url, exc.code)) from exc
     except URLError as exc:
@@ -560,4 +563,3 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

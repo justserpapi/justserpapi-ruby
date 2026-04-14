@@ -18,6 +18,10 @@ The release workflow publishes this SDK to RubyGems.org through Trusted Publishi
 - The release workflow uses the `release` GitHub Actions environment.
 - No long-lived RubyGems API key is required.
 - The workflow needs `contents: write` and `id-token: write`.
+- For the scheduled OpenAPI sync workflow, configure:
+  - `JUSTSERPAPI_OPENAPI_USERNAME`
+  - `JUSTSERPAPI_OPENAPI_PASSWORD`
+  - `JUSTSERPAPI_OPENAPI_URL` only if the docs URL itself changed
 
 ## Release Procedure
 
@@ -32,4 +36,3 @@ The release workflow publishes this SDK to RubyGems.org through Trusted Publishi
 
 4. Create and push a matching Git tag, for example `v0.1.0`.
 5. The `release.yml` workflow will build the gem, publish it to RubyGems.org, and create the GitHub Release.
-
