@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Control plane for the JustSerpAPI Ruby SDK."""
+"""Control plane for the JustSERPAPI Ruby SDK."""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ VERSION_PATTERN = re.compile(r'^\s*VERSION\s*=\s*["\']([^"\']+)["\']\s*$', re.MU
 TEMPLATE_PATTERN = re.compile(r"{{\s*([A-Z0-9_]+)\s*}}")
 
 
-SUCCESS_RESPONSE_DESCRIPTION = "Successful JustSerpAPI response."
+SUCCESS_RESPONSE_DESCRIPTION = "Successful JustSERPAPI response."
 UNEXPECTED_RESPONSE_DESCRIPTION = "Unexpected response."
 
 
@@ -147,7 +147,7 @@ def fetch_spec_command(args: argparse.Namespace, manifest: Dict[str, Any]) -> No
 def build_success_schema() -> Dict[str, Any]:
     return {
         "type": "object",
-        "description": "Standard JustSerpAPI response envelope.",
+        "description": "Standard JustSERPAPI response envelope.",
         "required": ["code", "message", "data", "requestId", "timestamp"],
         "properties": {
             "code": {
@@ -183,13 +183,13 @@ def build_security_schemes() -> Dict[str, Any]:
             "type": "apiKey",
             "in": "header",
             "name": "X-API-Key",
-            "description": "Primary authentication header for JustSerpAPI.",
+            "description": "Primary authentication header for JustSERPAPI.",
         },
         "ApiKeyQuery": {
             "type": "apiKey",
             "in": "query",
             "name": "api_key",
-            "description": "Compatibility fallback query parameter for JustSerpAPI.",
+            "description": "Compatibility fallback query parameter for JustSERPAPI.",
         },
     }
 
@@ -226,7 +226,7 @@ def normalize_spec(document: Dict[str, Any], manifest: Dict[str, Any]) -> Dict[s
     normalized["servers"] = [
         {
             "url": manifest["service"]["default_server_url"],
-            "description": "JustSerpAPI production server",
+            "description": "JustSERPAPI production server",
         }
     ]
     normalized["tags"] = [
@@ -499,7 +499,7 @@ def promote_baseline_command(args: argparse.Namespace, manifest: Dict[str, Any])
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="JustSerpAPI Ruby SDK control plane.")
+    parser = argparse.ArgumentParser(description="JustSERPAPI Ruby SDK control plane.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     fetch_parser = subparsers.add_parser("fetch-spec", help="Fetch the upstream OpenAPI spec.")

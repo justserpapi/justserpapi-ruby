@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module JustSerpApi
-  # Standard JustSerpAPI response envelope.
+  # Standard JustSERPAPI response envelope.
   class JustSerpApiResponse < ApiModelBase
     # Application-level status code.
     attr_accessor :code

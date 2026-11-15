@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name = "justserpapi"
   spec.version = JustSerpApi::VERSION
   spec.platform = Gem::Platform::RUBY
-  spec.authors = ["JustSerpAPI"]
+  spec.authors = ["JustSERPAPI"]
   spec.email = ["support@justserpapi.com"]
-  spec.summary = "OpenAPI-first Ruby SDK for JustSerpAPI"
-  spec.description = "Generated Ruby client and stable high-level wrapper for the JustSerpAPI HTTP API."
+  spec.summary = "OpenAPI-first Ruby SDK for JustSERPAPI"
+  spec.description = "Generated Ruby client and stable high-level wrapper for the JustSERPAPI HTTP API."
   spec.homepage = "https://github.com/justserpapi/justserpapi-ruby"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1"

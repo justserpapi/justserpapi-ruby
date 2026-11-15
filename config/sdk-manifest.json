@@ -1,8 +1,8 @@
 {
   "service": {
     "name": "justserpapi",
-    "display_name": "JustSerpAPI",
-    "description": "OpenAPI-first Ruby SDK for JustSerpAPI.",
+    "display_name": "JustSERPAPI",
+    "description": "OpenAPI-first Ruby SDK for JustSERPAPI.",
     "default_server_url": "https://api.justserpapi.com"
   },
   "spec": {
@@ -23,8 +23,8 @@
     "registry": "rubygems",
     "repo_name": "justserpapi-ruby",
     "repo_remote": "https://github.com/justserpapi/justserpapi-ruby",
-    "summary": "OpenAPI-first Ruby SDK for JustSerpAPI",
-    "description": "Generated Ruby client and stable high-level wrapper for the JustSerpAPI HTTP API.",
+    "summary": "OpenAPI-first Ruby SDK for JustSERPAPI",
+    "description": "Generated Ruby client and stable high-level wrapper for the JustSERPAPI HTTP API.",
     "license": "MIT",
     "required_ruby_version": ">= 3.1"
   },

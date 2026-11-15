@@ -270,7 +270,7 @@ module JustSerpApi
       [
         {
           url: "https://api.justserpapi.com",
-          description: "JustSerpAPI production server",
+          description: "JustSERPAPI production server",
         }
       ]
     end

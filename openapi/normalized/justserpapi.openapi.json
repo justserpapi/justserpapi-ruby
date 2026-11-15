@@ -2,7 +2,7 @@
   "components": {
     "schemas": {
       "JustSerpApiResponse": {
-        "description": "Standard JustSerpAPI response envelope.",
+        "description": "Standard JustSERPAPI response envelope.",
         "properties": {
           "code": {
             "description": "Application-level status code.",
@@ -40,13 +40,13 @@
     },
     "securitySchemes": {
       "ApiKeyAuth": {
-        "description": "Primary authentication header for JustSerpAPI.",
+        "description": "Primary authentication header for JustSERPAPI.",
         "in": "header",
         "name": "X-API-Key",
         "type": "apiKey"
       },
       "ApiKeyQuery": {
-        "description": "Compatibility fallback query parameter for JustSerpAPI.",
+        "description": "Compatibility fallback query parameter for JustSERPAPI.",
         "in": "query",
         "name": "api_key",
         "type": "apiKey"
@@ -359,7 +359,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -567,7 +567,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -729,7 +729,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -1369,7 +1369,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -5580,7 +5580,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -7354,7 +7354,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -8123,7 +8123,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -9157,7 +9157,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -9816,7 +9816,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -9975,7 +9975,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -10203,7 +10203,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -10329,7 +10329,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -10455,7 +10455,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -10930,7 +10930,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -14727,7 +14727,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -15968,7 +15968,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -17296,7 +17296,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -20344,7 +20344,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -20876,7 +20876,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -20990,7 +20990,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -21340,7 +21340,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -21881,7 +21881,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -22907,7 +22907,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -23359,7 +23359,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -23650,7 +23650,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -24510,7 +24510,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -24773,7 +24773,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -24879,7 +24879,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -25606,7 +25606,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -26277,7 +26277,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -26593,7 +26593,7 @@
                 }
               }
             },
-            "description": "Successful JustSerpAPI response."
+            "description": "Successful JustSERPAPI response."
           },
           "401": {
             "description": "Authentication failed: API Key is invalid or missing"
@@ -26629,7 +26629,7 @@
   ],
   "servers": [
     {
-      "description": "JustSerpAPI production server",
+      "description": "JustSERPAPI production server",
       "url": "https://api.justserpapi.com"
     }
   ],

@@ -1,6 +1,6 @@
-# JustSerpAPI Ruby SDK
+# JustSERPAPI Ruby SDK
 
-OpenAPI-first Ruby SDK for the JustSerpAPI HTTP interface. The repository commits the fetched upstream spec, a deterministic normalized spec, and the generated low-level Ruby runtime so endpoint additions and changes flow through code generation instead of manual SDK edits.
+OpenAPI-first Ruby SDK for the JustSERPAPI HTTP interface. The repository commits the fetched upstream spec, a deterministic normalized spec, and the generated low-level Ruby runtime so endpoint additions and changes flow through code generation instead of manual SDK edits.
 
 ## Install
 
@@ -32,7 +32,7 @@ puts search["code"]
 puts search["data"]
 ```
 
-The high-level client returns the standard JustSerpAPI response envelope as a Ruby `Hash`. Low-level generated classes stay public for full endpoint coverage.
+The high-level client returns the standard JustSERPAPI response envelope as a Ruby `Hash`. Low-level generated classes stay public for full endpoint coverage.
 
 ## Public API
 
