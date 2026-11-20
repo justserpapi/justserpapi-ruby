@@ -18,7 +18,9 @@ require 'justserpapi/version'
 require 'justserpapi/configuration'
 
 # Models
+require 'justserpapi/models/json_node'
 require 'justserpapi/models/just_serp_api_response'
+require 'justserpapi/models/result_json_node'
 
 # APIs
 require 'justserpapi/api/google_api'
